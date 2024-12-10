@@ -1,18 +1,28 @@
 # IPL First Innings Score Predictor
 
 ## Overview
-The **IPL First Innings Score Predictor** is a machine learning-based web application developed using Flask. It predicts the score of the first innings in an IPL cricket match based on user inputs such as batting team, bowling team, overs played, and current runs scored.
+The **IPL First Innings Score Predictor** is a machine learning-based web application developed using Flask. It predicts the score of the first innings in an IPL cricket match based on user inputs such as batting team, bowling team, overs played, runs scored, wickets lost, and performance in the last 5 overs.
 
 ## Features
 - **User-Friendly Interface:** A simple and intuitive web interface to input match details.
 - **Real-Time Predictions:** Predicts the score of the first innings in real-time.
-- **Machine Learning Model:** Built using Python's machine learning libraries.
+- **Machine Learning Model:** Built using a Linear Regression model with support for other models like Ridge Regression for improved accuracy.
+- **Comprehensive Dataset:** Uses detailed IPL data from 2008 to 2024, comprising over 15,000 records.
 
 ## Technologies Used
 - **Backend:** Flask (Python)
 - **Frontend:** HTML, CSS
 - **Machine Learning:** scikit-learn, pandas, numpy
 - **Deployment:** Flask Server (can be deployed on platforms like Heroku, AWS, etc.)
+
+## Dataset Details
+The dataset was sourced from Kaggle and includes ball-by-ball data from IPL matches between 2008 and 2024. 
+- **Training Data:** Matches before 2016
+- **Testing Data:** Matches from 2017 onwards
+
+The dataset features:
+- Ball-by-ball data with over 15,000 entries
+- Information on runs, wickets, and performance in the last 5 overs
 
 ## Requirements
 - Python 3.7 or above
@@ -26,7 +36,7 @@ The **IPL First Innings Score Predictor** is a machine learning-based web applic
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/IPL-First-Innings-Score-Prediction.git
+   git clone https://github.com/hardy2p/IPL-First-Innings-Score-Prediction.git
    cd IPL-First-Innings-Score-Prediction
    ```
 
@@ -55,20 +65,21 @@ The **IPL First Innings Score Predictor** is a machine learning-based web applic
 1. Enter the match details:
    - Batting team
    - Bowling team
-   - Overs played
+   - Overs played (must be greater than 5)
    - Current runs scored
+   - Wickets lost
+   - Runs and wickets in the last 5 overs
 2. Click on the **Predict Score** button.
 3. View the predicted score for the first innings.
 
 ## Model Details
-The machine learning model was trained using historical IPL data. It uses regression techniques to predict the score based on features such as:
-- Batting team
-- Bowling team
-- Overs played
-- Current runs scored
+The primary model used for prediction is **Linear Regression**. However, other models like **Ridge Regression** can be integrated for improved accuracy. 
 
-### Dataset
-The dataset used for training includes IPL match data from previous seasons.
+### Inputs for Prediction:
+- Overs played (must be > 5)
+- Current runs scored
+- Wickets lost
+- Performance in the last 5 overs (runs and wickets)
 
 ## Folder Structure
 ```
@@ -77,6 +88,7 @@ IPL-First-Innings-Score-Prediction/
 ├── templates/              # HTML templates
 ├── static/                 # CSS and JS files
 ├── model.pkl               # Trained machine learning model
+├── ipl.csv                 # Dataset
 ├── requirements.txt        # Python dependencies
 ├── README.md               # Project documentation
 ```
@@ -95,5 +107,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 For any questions or suggestions, feel free to contact:
-- **Name:** Pushpendra
+- **Name:** Pushpendra (Manvendra)
 - **Email:** work.pushpendra16@gmail.com
