@@ -107,5 +107,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 For any questions or suggestions, feel free to contact:
-- **Name:** Pushpendra (Manvendra)
+- **Name:** Pushpendra
 - **Email:** work.pushpendra16@gmail.com
